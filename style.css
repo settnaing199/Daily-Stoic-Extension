@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3%;
+  padding-top: 15%;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: 55px;
+}
+
+#flex-container {
+  height: 135px;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#flex-container > div {
+  background-color: #f1f1f1;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+/* Timer Bar Styling */
+.round-time-bar {
+  margin: 1rem;
+  overflow: hidden;
+}
+.round-time-bar div {
+  height: 2px;
+  animation: roundtime calc(var(--duration) * 1s) steps(var(--duration))
+    forwards;
+  transform-origin: left center;
+  background: linear-gradient(to bottom, rgb(83, 82, 82), rgb(5, 5, 5));
+}
+
+.round-time-bar[data-style="smooth"] div {
+  animation: roundtime calc(var(--duration) * 1s) linear forwards;
+}
+
+.round-time-bar[data-color="blue"] div {
+  background: linear-gradient(to bottom, #424344, #050505);
+}
+
+@keyframes roundtime {
+  to {
+    /* More performant than `width` */
+    transform: scaleX(0);
+  }
+}
+
+/* Quotes */
+#quotes {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  padding: 5%, 20%, 5%, 20%;
+  margin-top: 4%;
+}
